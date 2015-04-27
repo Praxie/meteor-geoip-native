@@ -16,13 +16,14 @@ Benchmarks on my 2011 Macbook Air whilst running lots of software.  The test too
 Comes with the [standard CSV database by MaxMind](http://www.maxmind.com/app/geolite) which may require updating.
 
 ## Examples
+        if (Meteor.isServer) {
+	  var ip = "123.123.123.123";
+	  GeoIP.lookup(ip);
+	  console.log("country: " + ip.name + " / " + ip.code);
 
-	var ip = "123.123.123.123";
-	GeoIP.lookup(ip);
-	console.log("country: " + ip.name + " / " + ip.code);
-
-	// in practice you'd want:
-	// ip = request.headers["x-forwarded-for"] || request.connection.remoteAddress,
+	  // in practice you'd want:
+	  // ip = request.headers["x-forwarded-for"] || request.connection.remoteAddress,
+	}
 
 ### License
 Copyright [Playtomic Inc](https://playtomic.com), 2012.  Licensed under the MIT license.  Certain portions may come from 3rd parties and carry their own licensing terms and are referenced where applicable.
