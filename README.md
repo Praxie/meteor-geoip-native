@@ -16,7 +16,7 @@ Benchmarks on my 2011 Macbook Air whilst running lots of software.  The test too
 Comes with the [standard CSV database by MaxMind](http://www.maxmind.com/app/geolite) which may require updating.
 
 ## Examples
-        if (Meteor.isServer) {
+    if (Meteor.isServer) {
 	  var ip = "123.123.123.123";
 	  GeoIP.lookup(ip);
 	  console.log("country: " + ip.name + " / " + ip.code);
